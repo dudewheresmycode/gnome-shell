@@ -4,13 +4,14 @@ $popover_arrow_height: 12px;
 
 // the popover itself
 .popup-menu-boxpointer {
-  -arrow-border-radius: $modal_radius;
-  -arrow-background-color: $bg_color;
-  -arrow-border-width: 1px;
-  -arrow-border-color: $borders_color;
-  -arrow-base: $popover_arrow_height * 2;
-  -arrow-rise: $popover_arrow_height;
-  -arrow-box-shadow: 0 1px 3px rgba(0,0,0,0.5); // dreaming bugzilla #689995
+  -arrow-border-radius: 0;
+  -arrow-background-color: transparent;
+  -arrow-border-color: transparent;
+  -arrow-border-width: 0;
+  -arrow-base: 0;
+  -arrow-rise: $base_margin; // use this as top margin
+  -arrow-box-shadow: none; // dreaming bugzilla #689995
+  margin: $base_margin;
 }
 
 // container of the popover menu
@@ -25,7 +26,12 @@ $popover_arrow_height: 12px;
   }
 }
 
+// draw the style of the popover here
 .popup-menu-content {
+  border-radius: $modal_radius;
+  border: 1px solid $borders_color;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
+  background-color: $bg_color;
   padding: $base_padding * 2 + $base_margin 0;
 }
 
