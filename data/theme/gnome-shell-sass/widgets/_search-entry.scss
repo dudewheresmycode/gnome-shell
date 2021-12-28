@@ -22,15 +22,16 @@ $search_entry_height: 36px;
 
   &:focus {
     border-style: solid;
-    background-color: transparentize($selected_bg_color, 0.9);
     border-color: $selected_bg_color;
+    background-color: transparentize($selected_bg_color, 0.9);
     color: $fg_color;
     box-shadow:none;
   }
 
   .search-entry-icon { 
-    icon-size: $base_icon_size;
-    padding: 0 4px;
     color: inherit;
+    icon-size: $base_icon_size;
+    margin-top: 2px; // center vertically
+    padding: 0 4px;
   }
 }
