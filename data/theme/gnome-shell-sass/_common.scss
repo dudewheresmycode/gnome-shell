@@ -31,7 +31,7 @@ $base_margin: 4px;
 $base_spacing: 6px;
 
 // border radii
-$base_border_radius: 8px;
+$base_border_radius: 10px;
 
 $modal_radius:$base_border_radius * 2;
 
@@ -148,10 +148,9 @@ stage {
   }
 }
 
-
 // notification styling
 @mixin notification_bubble($flat: false) {
-  border-width: 1px;
+  border-width: 0px;
   border-style: solid;
   border-radius: $base_border_radius + 2px;
   margin: $base_margin;
