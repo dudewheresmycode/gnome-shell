@@ -93,6 +93,8 @@
     text-align: center;
     padding: 0;
     margin: 2px;
+    height: $calendar_day_size;
+    width: $calendar_day_size;
     border-radius: $calendar_day_size * 0.5 + 2px;
     border: 1px solid transparent; //avoid jumparound due to today
     font-feature-settings: "tnum";
@@ -155,6 +157,8 @@
 
   .calendar-day-with-events {
     background-image: if($variant=='light', url("resource:///org/gnome/shell/theme/calendar-today.svg"), url("resource:///org/gnome/shell/theme/calendar-today-dark.svg"));
+    background-size: 24px;
+    background: cover;
     &.calendar-work-day {
       color: lighten($fg_color,10%);
       font-weight: bold;
