@@ -2,7 +2,7 @@
 
 $popover_arrow_height: 12px;
 
-// the popover itself
+// the popover itself (has no style)
 .popup-menu-boxpointer {
   -arrow-border-radius: 0;
   -arrow-background-color: transparent;
@@ -11,7 +11,7 @@ $popover_arrow_height: 12px;
   -arrow-base: 0;
   -arrow-rise: $base_margin; // use this as top margin
   -arrow-box-shadow: none; // dreaming bugzilla #689995
-  margin: $base_margin;
+  margin: $base_margin; // used as distance from the screen edge
 }
 
 // container of the popover menu
@@ -29,27 +29,41 @@ $popover_arrow_height: 12px;
 // draw the style of the popover here
 .popup-menu-content {
   border-radius: $modal_radius;
-  border: 1px solid $borders_color;
+  border: 1px solid $borders_color; 
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
   background-color: $bg_color;
-  padding: $base_padding * 2 + $base_margin 0;
+  padding: $base_padding * 2;
 }
 
 // menu items
 .popup-menu-item {
   spacing: $base_padding;
-  padding: $base_padding;
+  padding: $base_padding*1.5;
+  margin: 2px 0;
+  border-radius: $base_border_radius;
+  transition: 0.2s all ease;
 
   &:ltr { padding-right:1.75em; padding-left: 0; }
   &:rtl { padding-right: 0; padding-left:1.75em; }
 
+  &:hover {
+    background-color: $hover_bg_color;
+  }
+
   &:checked {
-    background-color: lighten($bg_color, 2%);
-    box-shadow: none;
+    background-color: $active_bg_color;
+    font-weight: bold;
+
+    margin-bottom: 0;
+    box-shadow: 0 10px 0 0 $active_bg_color;
+    
+    &:hover {
+      background-color: darken($active_bg_color, 4%);
+    }
   }
 
   &.selected {
-    background-color: transparentize(white, if($variant=='light', 0.2, 0.9));
+    background-color: transparentize($fg_color, if($variant=='light', 0.7, 0.9));
     color: $fg_color;
   }
 
@@ -64,7 +78,6 @@ $popover_arrow_height: 12px;
 // all icons and other graphical elements
 .popup-inactive-menu-item {
   color: $fg_color;
-  margin: $base_margin;
 
   // "Open Windows" label
   font-weight: bold;
@@ -77,20 +90,42 @@ $popover_arrow_height: 12px;
 .popup-menu-arrow,
 .popup-menu-icon { icon-size: $base_icon_size; }
 
+.popup-menu-arrow {
+  margin-right: $base_margin;
+}
+
 // popover submenus
 .popup-sub-menu {
-  background-color: darken($bg_color, 3%);
-  box-shadow: none;
-  border-top: 1px solid transparentize($borders_color, 0.2);
-  border-bottom: 1px solid transparentize($borders_color, 0.2);
+  background-color: $active_bg_color;
+  box-shadow: 0 -10px 0 0 $active_bg_color;
+  border:none;
+  border-radius: $base_border_radius;
+  padding: 3px 4px;
+  margin-top: 0;
+  
+  .popup-menu-ornament {
+    min-width: 6px !important;
+    padding-left: 4px !important;
+  }
+
+  .popup-menu-item {
+    border-radius: $base_border_radius - 3px;
+    padding: 5px;
+  }
+
+  .popup-separator-menu-item {
+    margin: 0;
+  }
 }
 
 // container for radio and check boxes
 .popup-menu-ornament {
   width: 1.2em;
+  font-weight: bold;
+  font-size: 1em;
 
-  &:ltr { text-align: right };
-  &:rtl { text-align: left };
+  &:ltr { text-align: right; };
+  &:rtl { text-align: left; };
 }
 
 // separator
@@ -100,13 +135,13 @@ $popover_arrow_height: 12px;
   .popup-separator-menu-item-separator {
     //-margin-horizontal: 24px;
     height: 1px; //not really the whole box
-    margin: 6px 64px;
+    margin: $base_margin 4em;
     background-color: lighten($borders_color, 2%);
+
     .popup-sub-menu & { //submenu separators
-      margin: 0 64px 0 32px;
-      @if $variant == 'dark' {
-        background-color: lighten($bg_color,10%);
-      }
+      margin: 0 4em 0 3em; // balance it in the middle
+      padding:0 !important;
+      background-color: $borders_color;
     }
   }
 }
@@ -120,6 +155,14 @@ $popover_arrow_height: 12px;
 // system status menu
 .aggregate-menu {
   min-width: 21em;
+
+  // this is unneeded in this menu, hide it
+  .popup-menu-ornament {width:0;padding:0;spacing:0;margin:0;}
+
+  .popup-menu-item {
+    &:ltr { padding-right:$base_padding; }
+    &:rtl { padding-left:$base_padding; }
+  }
 
   // lock screen, shutdown, etc. buttons
   .popup-menu-icon { 
