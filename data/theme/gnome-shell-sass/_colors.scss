@@ -2,11 +2,11 @@
 // it gets @if-ed depending on $variant
 
 $base_color: if($variant == 'light', #fff, lighten(desaturate(#242424, 20%), 2%));
-$bg_color: if($variant == 'light', #fafafa, #242424);
+$bg_color: if($variant == 'light', #f6f5f4, #242424);
 $fg_color: if($variant == 'light', transparentize(black, .2), white);
 
 $selected_fg_color: #fff;
-$selected_bg_color: if($variant == 'light', #1c71d8, darken(#1c71d8, 10%));
+$selected_bg_color: if($variant == 'light', #3584e4, #1c71d8);
 $selected_borders_color: if($variant== 'light', darken($selected_bg_color, 15%), darken($selected_bg_color, 30%));
 $borders_color: if($variant == 'light', darken($bg_color, 12%), darken($bg_color, 5%));
 $borders_edge: if($variant == 'light', rgba(255,255,255,0.8), transparentize($fg_color, 0.93));
@@ -28,7 +28,7 @@ $osd_borders_color: transparentize(black, 0.3);
 $osd_outer_borders_color: transparentize(white, 0.84);
 
 $shadow_color: if($variant == 'light', rgba(0,0,0,0.1), rgba(0,0,0,0.2));
-$system_bg_color: darken(#242424, 2%);
+$system_bg_color: if($variant == 'light', #9a9996, darken(#242424, 2%)); 
 
 //insensitive state derived colors
 $insensitive_fg_color: mix($fg_color, $bg_color, 50%);

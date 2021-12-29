@@ -196,7 +196,7 @@
 }
 
 // overview icons
-@mixin overview-icon($color) {
+@mixin overview_icon($color) {
   .overview-icon {
     @extend %icon_tile;
     color: $color;
@@ -223,6 +223,7 @@
     }
   }
 
+  &:focus,
   &:active,
   &:checked {
     .overview-icon {
