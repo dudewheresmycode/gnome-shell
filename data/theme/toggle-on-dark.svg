@@ -22,7 +22,7 @@
      inkscape:pagecheckerboard="0"
      showgrid="false"
      inkscape:zoom="4"
-     inkscape:cx="0.25"
+     inkscape:cx="0.125"
      inkscape:cy="-32"
      inkscape:window-width="1920"
      inkscape:window-height="1011"
@@ -39,7 +39,7 @@
      stroke="#2b73cc"
      id="g6">
     <rect
-       style="fill:#1a5fb4;stroke:none;stroke-width:1;marker:none"
+       style="fill:#1c71d8;stroke:none;stroke-width:1;marker:none"
        width="48"
        height="26"
        x="0"
@@ -67,7 +67,7 @@
        x="24"
        height="22"
        width="22"
-       style="fill:#3d3846;stroke:none;stroke-width:0.999999;marker:none"
+       style="fill:#ffffff;stroke:none;stroke-width:0.999999;marker:none"
        fill="#f8f7f7"
        stroke-linecap="round"
        stroke-linejoin="round"
