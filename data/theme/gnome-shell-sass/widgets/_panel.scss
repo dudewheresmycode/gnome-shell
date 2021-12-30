@@ -173,3 +173,15 @@ $panel_transition_duration: 250ms; // same as the overview transition duration
   padding: 0 $base_padding;
   spacing: $base_spacing;
 }
+
+
+// Clock
+
+.clock-display-box {
+  spacing: 2px;
+
+  .clock {
+    padding-left: $base_padding * 2;
+    padding-right: $base_padding * 2;
+  }
+}
