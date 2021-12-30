@@ -24,7 +24,7 @@ $search_entry_height: 36px;
     border-style: solid;
     border-color: $selected_bg_color;
     color: $fg_color;
-    box-shadow: inset 0 99px 0 0 transparentize($selected_bg_color, 0.8);
+    box-shadow: none;
   }
 
   .search-entry-icon { 
