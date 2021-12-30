@@ -65,9 +65,8 @@
   // month
   .calendar-month-label {
     color: lighten($fg_color,5%);
-    font-weight: 1000;
+    font-weight: bold;
     padding: 8px 0;
-    &:focus {}
   }
 
   // prev/next month icons
@@ -107,9 +106,11 @@
 
     // day of week heading
     &.calendar-day-heading {
-      color: $insensitive_fg_color;   
-      font-weight: bold;
-      @include fontsize($base_font_size - 4);
+      color: $insensitive_fg_color;
+      font-weight: 1000;
+      padding-top: $base_padding;
+      height: 16px !important; // force heading to be smaller height
+      @include fontsize($base_font_size - 2);
     }
   }
 
