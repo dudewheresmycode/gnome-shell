@@ -133,18 +133,47 @@ stage {
   &:hover { @include button(hover, $shadow: none); }
   &:active { @include button(active, $shadow: none); }
 
-  // radius is 2 pixel less to fit in bubble
+  // radius is 7 pixel less to fit in bubble
   &:first-child {
-    border-radius: 0 0 0 $modal_radius - 2px;
+    border-radius: 0 0 0 $modal_radius - 7px;
   }
 
   &:last-child {
     border-right-width: 0;
-    border-radius: 0 0 $modal_radius - 2px 0;
+    border-radius: 0 0 $modal_radius - 7px 0;
   }
 
   &:first-child:last-child {
-    border-radius: 0 0 $modal_radius - 2px $modal_radius - 2px;
+    border-radius: 0 0 $modal_radius - 7px $modal_radius - 7px;
+  }
+}
+
+// buttons in notifications
+%notification_button {
+  @include button(normal, $shadow: none);
+  padding: $base_padding * 2;
+  border-style: solid;
+  border-width: 1px;
+  border-left-width: 0;
+  border-bottom-width: 0;
+
+  &:insensitive { @include button(insensitive, $shadow: none); }
+  &:focus { @include button(focus, $shadow: none); }
+  &:hover { @include button(hover, $shadow: none); }
+  &:active { @include button(active, $shadow: none); }
+
+  // radius is 2 pixel less to fit in bubble
+  &:first-child {
+    border-radius: 0 0 0 $base_border_radius - 3px;
+  }
+
+  &:last-child {
+    border-right-width: 0;
+    border-radius: 0 0 $base_border_radius - 3px 0;
+  }
+
+  &:first-child:last-child {
+    border-radius: 0 0 $base_border_radius - 3px $base_border_radius - 3px;
   }
 }
 
