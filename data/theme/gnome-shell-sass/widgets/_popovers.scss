@@ -1,7 +1,5 @@
 /* Popovers/Menus */
 
-$popover_arrow_height: 12px;
-
 // the popover itself (has no style)
 .popup-menu-boxpointer {
   -arrow-border-radius: 0;
@@ -55,7 +53,9 @@ $popover_arrow_height: 12px;
     font-weight: bold;
 
     margin-bottom: 0;
-    box-shadow: 0 10px 0 0 $active_bg_color;
+    box-shadow: inset 0 -1px 0 0 $borders_color;
+    border-radius: $base_border_radius $base_border_radius 0 0;
+    
     
     &:hover {
       background-color: darken($active_bg_color, 4%);
@@ -88,7 +88,11 @@ $popover_arrow_height: 12px;
 
 // symbolic icons in popover
 .popup-menu-arrow,
-.popup-menu-icon { icon-size: $base_icon_size; }
+.popup-menu-icon { 
+  margin: 0;
+  padding:0;
+  icon-size: 16px !important;
+}
 
 .popup-menu-arrow {
   margin-right: $base_margin;
@@ -97,15 +101,17 @@ $popover_arrow_height: 12px;
 // popover submenus
 .popup-sub-menu {
   background-color: $active_bg_color;
-  box-shadow: 0 -10px 0 0 $active_bg_color;
   border:none;
-  border-radius: $base_border_radius;
+  border-radius: 0 0 $base_border_radius $base_border_radius;
   padding: 3px 4px;
   margin-top: 0;
+
+  &:active {
+    background-color: transparent;
+  }
   
   .popup-menu-ornament {
     min-width: 6px !important;
-    padding-left: 4px !important;
   }
 
   .popup-menu-item {
@@ -156,7 +162,7 @@ $popover_arrow_height: 12px;
 .aggregate-menu {
   min-width: 21em;
 
-  // this is unneeded in this menu, hide it
+  // this is unneeded in at the top-level this menu, hide it
   .popup-menu-ornament {width:0;padding:0;spacing:0;margin:0;}
 
   .popup-menu-item {
@@ -174,11 +180,11 @@ $popover_arrow_height: 12px;
   .popup-sub-menu .popup-menu-item > :first-child {
     // account for icons in submenus with padding
     &:ltr {
-      padding-left: $base_padding + $base_margin * 2; 
+      padding-left: 0;
       margin-left: $base_icon_size;
     }
     &:rtl {
-      padding-right: $base_padding + $base_margin * 2; ;
+      padding-right: 0;
       margin-right: $base_icon_size;
     }
   }
