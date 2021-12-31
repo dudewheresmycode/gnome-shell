@@ -69,7 +69,7 @@ $default_key_bg_color: if($variant=='light', darken($osd_bg_color, 11%), lighten
 
   &.shift-key-uppercase { color: $selected_bg_color }
 
-  StIcon { icon-size: 1.125em; }
+  StIcon { icon-size: 24px; }
 }
 
 // long press on a key popup
