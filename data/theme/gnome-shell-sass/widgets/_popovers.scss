@@ -1,13 +1,13 @@
 /* Popovers/Menus */
 
-// the popover itself (has no style)
+// the popover itself
 .popup-menu-boxpointer {
-  -arrow-border-radius: 0;
-  -arrow-background-color: transparent;
-  -arrow-border-color: transparent;
-  -arrow-border-width: 0;
-  -arrow-base: 0;
-  -arrow-rise: $base_margin; // use this as top margin
+  -arrow-border-radius: $base_border_radius;
+  -arrow-background-color: $bg_color;
+  -arrow-border-color: $borders_color;
+  -arrow-border-width: 1px;
+  -arrow-base: 24px;
+  -arrow-rise: 12px; 
   -arrow-box-shadow: none; // dreaming bugzilla #689995
   margin: $base_margin; // used as distance from the screen edge
 }
@@ -20,17 +20,33 @@
   //.popup-status-menu-item { font-weight: normal;  color: pink; } //dunno what that is
   &.panel-menu {
     -boxpointer-gap: $base_margin; // distance from the panel
-    margin-bottom: 1.75em;
+    
+    // override popover styles for panel menus so
+    // we can draw a box shadow and no arrow
+    -arrow-border-radius: $modal_radius;
+    -arrow-background-color: transparenttra;
+    -arrow-border-color: transparent;
+    -arrow-border-width: 0;
+    -arrow-base: 0;
+    -arrow-rise: $base_margin; // use this as top margin
+    -arrow-box-shadow: none; // dreaming bugzilla #689995
+    
+    margin-bottom: 1.75em; // so it doesn't touch the bottom of the screen
+
+    // style the menu content instead
+    .popup-menu-content {
+      border-radius: $modal_radius;
+      border: 1px solid $borders_color; 
+      box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
+      background-color: $bg_color;
+      padding: $base_padding * 2;
+    }
   }
 }
 
-// draw the style of the popover here
+// popover content;
 .popup-menu-content {
-  border-radius: $modal_radius;
-  border: 1px solid $borders_color; 
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
-  background-color: $bg_color;
-  padding: $base_padding * 2;
+  padding: $base_padding;
 }
 
 // menu items
