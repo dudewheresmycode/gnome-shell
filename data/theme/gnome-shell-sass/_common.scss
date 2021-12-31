@@ -40,12 +40,12 @@ $bubble_borders_color: lighten($borders_color, if($variant=='light', 0%, 5%));
 // $bubble_borders_color: if($variant == 'light', rgba(255,255,255,0.1), rgba(0,0,0,0.3));
 
 // hover
-$hover_bg_color: if($variant=='light', darken($bg_color, 3%), lighten($bg_color, 5%));
-$hover_fg_color: if($variant=='light', darken($fg_color, 5%), lighten($fg_color, 5%));
+$hover_bg_color: if($variant=='light', darken($bg_color, 3%), lighten($bg_color, 7%));
+$hover_fg_color: if($variant=='light', darken($fg_color, 5%), lighten($fg_color, 7%));
 $hover_borders_color: lighten($borders_color,if($variant=='light', 5%, 3%));
 
 // active
-$active_bg_color: if($variant == 'light', darken($bg_color, 7%), darken($bg_color, 4%));
+$active_bg_color: if($variant == 'light', darken($bg_color, 9%), darken($bg_color, 2%));
 $active_fg_color: darken($fg_color,if($variant=='light', 5%, 3%));
 $active_borders_color: darken($borders_color,if($variant=='light', 5%, 3%));
 
