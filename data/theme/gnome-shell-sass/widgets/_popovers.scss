@@ -2,7 +2,7 @@
 
 // the popover itself
 .popup-menu-boxpointer {
-  -arrow-border-radius: $modal_radius - 3px;
+  -arrow-border-radius: $modal_radius;
   -arrow-background-color: $bg_color;
   -arrow-border-color: $borders_color;
   -arrow-border-width: 1px;

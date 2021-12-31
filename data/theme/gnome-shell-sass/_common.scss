@@ -31,9 +31,10 @@ $base_margin: 4px;
 $base_spacing: 6px;
 
 // border radii
-$base_border_radius: 10px;
+$base_border_radius: 8px;
 
-$modal_radius:$base_border_radius * 2;
+// radii of things that display over other things, e.g. popovers
+$modal_radius: $base_border_radius*3; // 24px
 
 // non-standard colors
 $bubble_borders_color: lighten($borders_color, if($variant=='light', 0%, 5%));
@@ -77,7 +78,7 @@ stage {
   color: $osd_fg_color;
   background-color: $osd_bg_color;
   border: 1px solid $osd_outer_borders_color;
-  border-radius: $base_border_radius*2 + 4px;
+  border-radius: $modal_radius;
   padding: $base_padding*2;
 }
 
@@ -90,7 +91,7 @@ stage {
 
 // icon tiles
 %icon_tile {
-  border-radius: $base_border_radius + 4px;
+  border-radius: $base_border_radius * 2; // 16px
   padding: $base_padding;
   border: 2px solid transparent;
   transition-duration: 100ms;
@@ -106,7 +107,7 @@ stage {
 
 // button styling
 %button {
-  border-radius: $base_border_radius;
+  border-radius: $base_border_radius - 2px; // 6px
   border-style: solid;
   border-width: 1px;
   min-height: 22px;
@@ -162,18 +163,18 @@ stage {
   &:hover { @include button(hover, $shadow: none); }
   &:active { @include button(active, $shadow: none); }
 
-  // radius is 2 pixel less to fit in bubble
+  // make radius fit in bubble corner
   &:first-child {
-    border-radius: 0 0 0 $base_border_radius - 3px;
+    border-radius: 0 0 0 $base_border_radius - 5px;
   }
 
   &:last-child {
     border-right-width: 0;
-    border-radius: 0 0 $base_border_radius - 3px 0;
+    border-radius: 0 0 $base_border_radius - 5px 0;
   }
 
   &:first-child:last-child {
-    border-radius: 0 0 $base_border_radius - 3px $base_border_radius - 3px;
+    border-radius: 0 0 $base_border_radius - 5px $base_border_radius - 5px;
   }
 }
 
@@ -181,7 +182,7 @@ stage {
 @mixin notification_bubble($flat: false) {
   border-width: 0px;
   border-style: solid;
-  border-radius: $base_border_radius + 2px;
+  border-radius: $base_border_radius;
   margin: $base_margin;
 
   @if $flat {
