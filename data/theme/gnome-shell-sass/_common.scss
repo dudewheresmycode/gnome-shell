@@ -135,16 +135,16 @@ stage {
 
   // radius is 7 pixel less to fit in bubble
   &:first-child {
-    border-radius: 0 0 0 $modal_radius - 7px;
+    border-radius: 0 0 0 $modal_radius - 5px;
   }
 
   &:last-child {
     border-right-width: 0;
-    border-radius: 0 0 $modal_radius - 7px 0;
+    border-radius: 0 0 $modal_radius - 5px 0;
   }
 
   &:first-child:last-child {
-    border-radius: 0 0 $modal_radius - 7px $modal_radius - 7px;
+    border-radius: 0 0 $modal_radius - 5px $modal_radius - 5px;
   }
 }
 

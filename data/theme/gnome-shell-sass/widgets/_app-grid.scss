@@ -51,7 +51,7 @@ $app_grid_fg_color: #fff;
     &.folder-name-label,
     &.folder-name-entry {
       font-size: 18pt;
-      font-weight: 800;
+      font-weight: 1000;
     }
 
     &.folder-name-entry { width: 300px }
@@ -84,6 +84,7 @@ $app_grid_fg_color: #fff;
     margin-bottom: 18px;
   }
 }
+
 .app-folder-dialog-container {
   padding: $base_padding*2;
   width: 620px;
