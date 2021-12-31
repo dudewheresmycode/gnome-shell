@@ -61,12 +61,11 @@
 // message bubbles
 .message {
   @include notification_bubble;
-  padding: $base_padding * 1.5;
 
   // icon container
   .message-icon-bin {
-    padding: ($base_padding * 2);
-    padding-left:$base_padding;
+    padding: ($base_padding * 3);
+    padding-right:$base_padding;
 
     &:rtl {
       padding-right:$base_padding;
@@ -87,8 +86,9 @@
 
   // content
   .message-content {
-    padding: 0;
     spacing: 4px;
+    padding: ($base_padding*1.5);
+    margin-bottom: $base_margin*2;
   }
 
   // title
