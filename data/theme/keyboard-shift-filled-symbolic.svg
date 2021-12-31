@@ -1,3 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16">
-    <path d="M6 13V9H2.937l5.126-5.781L13.186 9H10v4z" style="marker:none" color="#000" overflow="visible" fill="#2e3436"/>
-</svg>
+<svg width="16" height="16" xmlns="http://www.w3.org/2000/svg"><g style="stroke-width:.666667"><path style="stroke-width:.444444;marker:none" d="M8.062 2.943 2.998 8.276H6.06v4h4v-4h3.187z" transform="matrix(1.5 0 0 1.5 -4.092 -3.414)" fill="#2e3436"/></g></svg>

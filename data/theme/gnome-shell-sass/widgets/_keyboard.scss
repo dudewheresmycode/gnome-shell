@@ -38,6 +38,7 @@ $default_key_bg_color: if($variant=='light', darken($osd_bg_color, 11%), lighten
   &:active { @include button(active, $c: $key_bg_color); }
 
   @include fontsize($base_font_size + 5);
+  font-weight: bold;
   min-height: $key_size;
   min-width: $key_size;
   border-width: 1px;
@@ -55,6 +56,7 @@ $default_key_bg_color: if($variant=='light', darken($osd_bg_color, 11%), lighten
     @include button(normal, $c:$default_key_bg_color);
     &:hover, &:checked {@include button(hover, $c: $default_key_bg_color);}
     &:active { @include button(active, $c: $default_key_bg_color);}
+    border-radius: $key_border_radius;
   }
 
   // enter key is suggested-action
@@ -62,6 +64,7 @@ $default_key_bg_color: if($variant=='light', darken($osd_bg_color, 11%), lighten
     @include button(normal, $c:$selected_bg_color, $tc:$selected_fg_color);
     &:hover, &:checked { @include button(hover, $c: lighten($selected_bg_color, 3%));}
     &:active {@include button(active, $c: darken($selected_bg_color, 2%));}
+    border-radius: $key_border_radius;
   }
 
   &.shift-key-uppercase { color: $selected_bg_color }
