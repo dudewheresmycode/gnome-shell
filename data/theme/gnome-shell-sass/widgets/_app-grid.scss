@@ -71,7 +71,7 @@ $app_grid_fg_color: #fff;
     }
   }
 
-  &.icon-grid {
+  & .icon-grid {
     row-spacing: $base_spacing * 2;
     column-spacing: $base_spacing * 5;
     page-padding-top: 0;
@@ -80,7 +80,7 @@ $app_grid_fg_color: #fff;
     page-padding-right: 0;
   }
 
-  &.page-indicators {
+  & .page-indicators {
     margin-bottom: 18px;
   }
 }
