@@ -34,7 +34,7 @@ $base_spacing: 6px;
 $base_border_radius: 8px;
 
 // radii of things that display over other things, e.g. popovers
-$modal_radius: $base_border_radius*3; // 24px
+$modal_radius: $base_border_radius*2; // 24px
 
 // non-standard colors
 $bubble_borders_color: lighten($borders_color, if($variant=='light', 0%, 5%));
@@ -149,36 +149,7 @@ stage {
   }
 }
 
-// buttons in notifications
-%notification_button {
-  @include button(normal, $shadow: none);
-  padding: $base_padding * 2;
-  border-style: solid;
-  border-width: 1px;
-  border-left-width: 0;
-  border-bottom-width: 0;
-
-  &:insensitive { @include button(insensitive, $shadow: none); }
-  &:focus { @include button(focus, $shadow: none); }
-  &:hover { @include button(hover, $shadow: none); }
-  &:active { @include button(active, $shadow: none); }
-
-  // make radius fit in bubble corner
-  &:first-child {
-    border-radius: 0 0 0 $base_border_radius - 5px;
-  }
-
-  &:last-child {
-    border-right-width: 0;
-    border-radius: 0 0 $base_border_radius - 5px 0;
-  }
-
-  &:first-child:last-child {
-    border-radius: 0 0 $base_border_radius - 5px $base_border_radius - 5px;
-  }
-}
-
-// notification styling
+// styling for elements within popovers that look like notifications
 @mixin notification_bubble($flat: false) {
   border-width: 0px;
   border-style: solid;

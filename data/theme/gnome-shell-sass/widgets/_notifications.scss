@@ -3,17 +3,45 @@
 $notification_banner_height: 64px;
 $notification_banner_width: 34em;
 
+
+$notification_button_radius: ($base_border_radius - 2px);
+
 // Banner notifications
 .notification-banner {
   min-height: $notification_banner_height;
   width: $notification_banner_width;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
 
   .notification-actions {
     spacing: 0;
   }
 
   .notification-button {
-    @extend %notification_button;
+    @include button(normal, lighten($bg_color, 5%), $shadow: none);
+    padding: $base_padding * 2;
+    border-style: solid;
+    border-width: 1px;
+    border-left-width: 0;
+    border-bottom-width: 0;
+
+    &:insensitive { @include button(insensitive, $shadow: none); }
+    &:focus { @include button(focus, $shadow: none); }
+    &:hover { @include button(hover, lighten($hover_bg_color, 5%), $shadow: none); }
+    &:active { @include button(active, lighten($active_bg_color, 5%), $shadow: none); }
+
+    // make radius fit in bubble corner (width of focus ring)
+    &:first-child {
+      border-radius: 0 0 0 $notification_button_radius;
+    }
+
+    &:last-child {
+      border-right-width: 0;
+      border-radius: 0 0 $notification_button_radius 0;
+    }
+
+    &:first-child:last-child {
+      border-radius: 0 0 $notification_button_radius $notification_button_radius;
+    }
   }
 }
 
