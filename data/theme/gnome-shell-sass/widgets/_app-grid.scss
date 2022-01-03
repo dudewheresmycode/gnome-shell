@@ -152,7 +152,7 @@ $app_grid_fg_color: #fff;
     background-gradient-start: rgba(255, 255, 255, 0.05);
     background-gradient-end: transparent;
     background-gradient-direction: horizontal;
-    border-radius: 15px 0px 0px 15px;
+    border-radius: $modal_radius*1.5 0px 0px $modal_radius*1.5;
   }
 
   &.previous:ltr,
@@ -160,7 +160,7 @@ $app_grid_fg_color: #fff;
     background-gradient-start: transparent;
     background-gradient-end: rgba(255, 255, 255, 0.05);
     background-gradient-direction: horizontal;
-    border-radius: 0px 15px 15px 0px;
+    border-radius: 0px $modal_radius*1.5 $modal_radius*1.5 0px;
   }
 }
 
