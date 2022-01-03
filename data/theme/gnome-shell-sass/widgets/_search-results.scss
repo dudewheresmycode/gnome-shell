@@ -21,7 +21,7 @@
 // content
 .search-section-content {
   background-color: lighten($system_bg_color, 5%);
-  border-radius: $modal_radius;
+  border-radius: $modal_radius*1.5;
   border: 1px solid $osd_outer_borders_color;
   box-shadow: none;
   text-shadow: none;
@@ -34,7 +34,7 @@
 %search_section_content_item {
   @extend %icon_tile;
 
-  border-radius: $base_border_radius - 2px;
+  border-radius: $base_border_radius;
 
   color: $osd_fg_color;
 
