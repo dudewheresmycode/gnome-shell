@@ -20,30 +20,7 @@ $notification_button_radius: ($notification_banner_radius - 2px);
   }
 
   .notification-button {
-    @include button(normal, lighten($bg_color, 5%), $shadow: none);
-    padding: $base_padding * 2;
-    border:1px solid;
-    border-left-width: 0;
-    border-bottom-width: 0;
-
-    &:insensitive { @include button(insensitive, $shadow: none); }
-    &:focus { @include button(focus, $shadow: none); }
-    &:hover { @include button(hover, lighten($hover_bg_color, 5%), $shadow: none); }
-    &:active { @include button(active, lighten($active_bg_color, 5%), $shadow: none); }
-
-    
-    &:first-child {
-      border-radius: 0 0 0 $notification_button_radius;
-    }
-
-    &:last-child {
-      border-right-width: 0;
-      border-radius: 0 0 $notification_button_radius 0;
-    }
-
-    &:first-child:last-child {
-      border-radius: 0 0 $notification_button_radius $notification_button_radius;
-    }
+    @extend %bubble_button;
   }
 }
 

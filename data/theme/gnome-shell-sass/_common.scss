@@ -120,32 +120,29 @@ stage {
   &:active, &:checked { @include button(active);}
 }
 
-// buttons in dialogs
-%bubble_button {
-  @include button(normal, $shadow: none);
-  padding: $base_padding * 2;
-  border-style: solid;
-  border-width: 1px;
-  border-left-width: 0;
-  border-bottom-width: 0;
+// buttons in dialogs/notifications
+// styled to have no shadow and be lighter in color
+$bubble_button_radius:$base_border_radius*1.25;
 
+%bubble_button {
+  padding: $base_padding * 2;
+  border: 0 solid $bg_color !important; 
+  border-radius: 0;
+  border-right-width: 1px !important; 
+
+  @include button(normal, lighten($bg_color, 5%), $shadow: none);
   &:insensitive { @include button(insensitive, $shadow: none); }
   &:focus { @include button(focus, $shadow: none); }
-  &:hover { @include button(hover, $shadow: none); }
-  &:active { @include button(active, $shadow: none); }
-
-  // radius is 7 pixel less to fit in bubble
+  &:hover { @include button(hover, lighten($hover_bg_color, 5%), $shadow: none); }
+  &:active { @include button(active, lighten($active_bg_color, 5%), $shadow: none); }
+  
   &:first-child {
-    border-radius: 0 0 0 $modal_radius - 5px;
+    border-radius: 0 0 0 $bubble_button_radius; 
   }
 
   &:last-child {
-    border-right-width: 0;
-    border-radius: 0 0 $modal_radius - 5px 0;
-  }
-
-  &:first-child:last-child {
-    border-radius: 0 0 $modal_radius - 5px $modal_radius - 5px;
+    border-radius: 0 0 $bubble_button_radius 0;
+    border-right-width: 0 !important;
   }
 }
 
