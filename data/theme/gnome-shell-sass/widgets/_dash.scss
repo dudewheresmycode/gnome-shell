@@ -52,11 +52,15 @@ $dash_border_radius: $modal_radius + 8px;
 .dash-item-container {
 
   // each app item on the dash
-  .app-well-app { padding:0;}
+  .app-well-app {
+    padding:0;
+    margin: 2px;
+  }
 
   // show apps button
   .show-apps {
     @include overview_icon($osd_fg_color);
+    margin: 2px;
     padding: 0;
   }
 }
