@@ -98,13 +98,6 @@ stage {
   text-align: center;
 }
 
-// dialogs
-%bubble_panel {
-  color: $fg_color;
-  background-color: $bg_color;
-  border: 1px solid if($variant=='light', rgba(0,0,0, 0.6), $borders_color);
-}
-
 // button styling
 %button {
   border-radius: $base_border_radius - 2px; // 6px
@@ -118,6 +111,15 @@ stage {
   &:hover { @include button(hover);}
   &:insensitive { @include button(insensitive);}
   &:active, &:checked { @include button(active);}
+}
+
+// dialogs
+%bubble_panel {
+  color: $fg_color;
+  background-color: $bg_color;
+  border-radius: $base_border_radius*1.25 + 1px;
+  border: none;
+  box-shadow: 0 0 0 1px $shadow_color;
 }
 
 // buttons in dialogs/notifications
