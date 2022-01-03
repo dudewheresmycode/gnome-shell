@@ -2,15 +2,18 @@
 
 $notification_banner_height: 64px;
 $notification_banner_width: 34em;
+$notification_banner_radius: $base_border_radius*1.5;
 
-
-$notification_button_radius: ($base_border_radius - 2px);
+// make radius of buttons fit in bubble corner (banner radius - width of focus ring)
+$notification_button_radius: ($notification_banner_radius - 2px);
 
 // Banner notifications
 .notification-banner {
   min-height: $notification_banner_height;
   width: $notification_banner_width;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px 2px rgba(0,0,0,0.1);
+  border-radius: $notification_banner_radius;
+  margin: $base_margin;
 
   .notification-actions {
     spacing: 0;
@@ -19,8 +22,7 @@ $notification_button_radius: ($base_border_radius - 2px);
   .notification-button {
     @include button(normal, lighten($bg_color, 5%), $shadow: none);
     padding: $base_padding * 2;
-    border-style: solid;
-    border-width: 1px;
+    border:1px solid;
     border-left-width: 0;
     border-bottom-width: 0;
 
@@ -29,7 +31,7 @@ $notification_button_radius: ($base_border_radius - 2px);
     &:hover { @include button(hover, lighten($hover_bg_color, 5%), $shadow: none); }
     &:active { @include button(active, lighten($active_bg_color, 5%), $shadow: none); }
 
-    // make radius fit in bubble corner (width of focus ring)
+    
     &:first-child {
       border-radius: 0 0 0 $notification_button_radius;
     }
