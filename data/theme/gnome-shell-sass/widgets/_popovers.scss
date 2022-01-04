@@ -121,7 +121,8 @@
   background-color: $active_bg_color;
   border:none;
   border-radius: 0 0 $base_border_radius $base_border_radius;
-  padding: 3px 4px;
+  padding: 0;
+  padding-bottom: $base_padding;
   margin-top: 0;
 
   &:active {
@@ -129,12 +130,13 @@
   }
   
   .popup-menu-ornament {
-    min-width: 6px !important;
+    min-width: 8px !important;
   }
 
   .popup-menu-item {
-    border-radius: $base_border_radius - 3px;
-    padding: 5px;
+    margin: 0;
+    border-radius: 0;
+    padding: $base_padding;
   }
 
   .popup-separator-menu-item {
