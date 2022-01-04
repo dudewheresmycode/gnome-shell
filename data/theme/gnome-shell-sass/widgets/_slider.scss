@@ -5,7 +5,7 @@ $slider_size: 16px;
 .slider {
   height: $slider_size;
   // slider trough
-  -barlevel-height: 8px; // has to be an odd number
+  -barlevel-height: 4px;
   -barlevel-background-color: $borders_color; //background of the trough
   -barlevel-border-width: 2px; 
   -barlevel-border-color: transparent; // trough border color
@@ -14,7 +14,7 @@ $slider_size: 16px;
   -barlevel-active-border-color: transparent;
   // overfill style (red in this case)
   -barlevel-overdrive-color: $destructive_color;
-  -barlevel-overdrive-border-color: if($variant == 'light', darken($destructive_color, 4%), lighten($destructive_color, 2%)); //trough border when red;
+  -barlevel-overdrive-border-color: transparent; //trough border when red;
   -barlevel-overdrive-separator-width:1px;
   // slider handler
   -slider-handle-radius: $slider_size * 0.5; // half the size of the size
