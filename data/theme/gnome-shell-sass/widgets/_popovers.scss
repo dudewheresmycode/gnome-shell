@@ -53,8 +53,8 @@
 
 // menu items
 .popup-menu-item {
-  spacing: $base_padding;
-  padding: $base_padding*1.5;
+  spacing: $base_spacing;
+  padding: $base_padding*2;
   margin: 2px 0;
   border-radius: $base_border_radius;
   transition: 0.2s all ease;
@@ -130,13 +130,12 @@
   }
   
   .popup-menu-ornament {
-    min-width: 8px !important;
+    min-width: 14px !important;
   }
 
   .popup-menu-item {
     margin: 0;
     border-radius: 0;
-    padding: $base_padding;
   }
 
   .popup-separator-menu-item {
@@ -186,8 +185,8 @@
   .popup-menu-ornament {width:0;padding:0;spacing:0;margin:0;}
 
   .popup-menu-item {
-    &:ltr { padding-right:$base_padding; }
-    &:rtl { padding-left:$base_padding; }
+    &:ltr { padding-left:$base_padding;padding-right:$base_padding*2; }
+    &:rtl { padding-right:$base_padding;padding-left:$base_padding*2; }
   }
 
   // lock screen, shutdown, etc. buttons
