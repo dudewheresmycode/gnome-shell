@@ -121,12 +121,12 @@
   border:none;
   border-radius: 0 0 $base_border_radius $base_border_radius;
   padding: 0;
-  padding-bottom: $base_padding;
   margin-top: 0;
-
   &:active {
     background-color: transparent;
   }
+
+  
   
   .popup-menu-ornament {
     min-width: 14px !important;
@@ -136,6 +136,10 @@
     margin: 0;
     border-radius: 0;
     padding: $base_padding*1.5 $base_padding*2;
+
+    &:last-child:hover{
+      border-radius: 0 0 $base_border_radius $base_border_radius;
+    }
   }
 
   .popup-separator-menu-item {
