@@ -19,7 +19,7 @@
 
   //.popup-status-menu-item { font-weight: normal;  color: pink; } //dunno what that is
   &.panel-menu {
-    -boxpointer-gap: $base_margin; // distance from the panel
+    -boxpointer-gap: $base_margin+2px; // distance from the panel
     
     // override popover styles for panel menus so
     // we can draw a box shadow and no arrow

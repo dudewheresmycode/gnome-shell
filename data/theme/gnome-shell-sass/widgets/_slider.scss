@@ -6,7 +6,7 @@ $slider_size: 16px;
   height: $slider_size;
   // slider trough
   -barlevel-height: 4px;
-  -barlevel-background-color: $borders_color; //background of the trough
+  -barlevel-background-color: transparentize($fg_color, 0.8); //background of the trough
   -barlevel-border-width: 2px; 
   -barlevel-border-color: transparent; // trough border color
   // fill style
