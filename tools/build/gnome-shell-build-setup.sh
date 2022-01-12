@@ -254,7 +254,7 @@ if test "x$system" = xMandrivaLinux ; then
 fi
 
 SOURCE=$HOME/Source
-BASEURL=http://git.gnome.org/browse/gnome-shell/plain/tools/build
+BASEURL=https://gitlab.gnome.org/GNOME/gnome-shell/-/raw/main/tools/build/
 
 if [ -d $SOURCE ] ; then : ; else
     mkdir $SOURCE
@@ -283,7 +283,7 @@ checkout_git() {
     fi
 }
 
-checkout_git jhbuild git://git.gnome.org/jhbuild
+checkout_git jhbuild https://gitlab.gnome.org/GNOME/jhbuild.git
 
 echo -n "Installing jhbuild ... "
 (cd $SOURCE/jhbuild &&
